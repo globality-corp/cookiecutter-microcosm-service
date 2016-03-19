@@ -1,0 +1,10 @@
+{
+    "author": "Globality Engineering",
+    "author_email": "engineering@globality.com",
+    "organization_name": "globality-corp",
+    "repo_name": "repo_name",
+    "project_name": "project_name",
+    "project_version": "0.1.0",
+    "short_description": "Short Project Description",
+    "service_port": 5000
+}

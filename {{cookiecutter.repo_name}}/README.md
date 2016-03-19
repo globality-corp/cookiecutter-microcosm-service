@@ -1,0 +1,37 @@
+# {{cookiecutter.project_name}}
+
+{{cookiecutter.short_description}}
+
+[![Circle CI](https://circleci.com/gh/{{cookiecutter.organization_name}}/{{cookiecutter.repo_name}}/tree/develop.svg?style=svg)](https://circleci.com/gh/{{cookiecutter.organization_name}}/{{cookiecutter.repo_name}}/tree/develop)
+
+
+## Postgres
+
+The service requires a Postgres user and two datbases (one is for testing):
+
+    createuser {{cookiecutter.project_name}}
+    createdb -O {{cookiecutter.project_name}} {{cookiecutter.project_name}}_db
+    createdb -O {{cookiecutter.project_name}} {{cookiecutter.project_name}}_test_db
+
+The service schema can be initialized using:
+
+    createall [-D]
+
+
+## Flask
+
+The service publishes several endpoints by default.
+
+ -  The service publishes its own health:
+
+        GET /api/health
+
+ -  The service publishes a [crawlable](https://en.wikipedia.org/wiki/HATEOAS) endpoint for discovery
+    of its operations:
+
+        GET /api/
+
+ -  The service publishes [Swagger](http://swagger.io/) definitions for its operations (by API version)
+    using [HAL JSON](http://stateless.co/hal_specification.html):
+
+        GET /api/v1/swagger
