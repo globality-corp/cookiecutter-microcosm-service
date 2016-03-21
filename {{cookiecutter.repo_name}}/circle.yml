@@ -4,8 +4,8 @@ general:
      - "cover"
 database:
   pre:
-     - createuser {{project_name}}
-     - createdb -O {{project_name}} {{project_name}}_test_db
+     - createuser {{cookiecutter.project_name}}
+     - createdb -O {{cookiecutter.project_name}} {{cookiecutter.project_name}}_test_db
 test:
   override:
      - tox
