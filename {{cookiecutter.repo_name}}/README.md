@@ -5,6 +5,15 @@
 [![Circle CI](https://circleci.com/gh/{{cookiecutter.organization_name}}/{{cookiecutter.repo_name}}/tree/develop.svg?style=svg)](https://circleci.com/gh/{{cookiecutter.organization_name}}/{{cookiecutter.repo_name}}/tree/develop)
 
 
+## Developing
+
+To setup the project for local development, make sure you have a virtualenv setup, and then run:
+
+    pip install -e .
+
+This will install all the dependencies and set the project up for local usage.
+
+
 ## Postgres
 
 The service requires a Postgres user and two datbases (one is for testing):
@@ -19,6 +28,10 @@ The service schema can be initialized using:
 
 
 ## Flask
+
+To run the Flask web server when developing locally, invoke the following:
+
+    runserver
 
 The service publishes several endpoints by default.
 
