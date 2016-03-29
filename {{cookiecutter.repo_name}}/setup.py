@@ -17,6 +17,7 @@ setup(
     install_requires=[
         "microcosm-flask>=0.4.0",
         "microcosm-postgres>=0.3.0",
+        "newrelic>=2.60.0",
     ],
     setup_requires=[
         "nose>=1.3.6",
