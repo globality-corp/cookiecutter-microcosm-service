@@ -6,6 +6,7 @@ from microcosm.api import binding, defaults
 from microcosm_flask.conventions.crud import configure_crud
 from microcosm_flask.conventions.crud_adapter import CRUDStoreAdapter
 from microcosm_flask.operations import Operation
+from microcosm_flask.namespaces import Namespace
 from microcosm_flask.paging import PageSchema
 from microcosm_postgres.context import transactional
 
@@ -19,7 +20,10 @@ from {{cookiecutter.project_name}}.resources.example_resources import ExampleSch
 )
 def configure_example_routes(graph):
 
-    path_prefix = graph.config.example_routes.path_prefix
+    ns = Namespace(
+        subject=Example,
+        path=graph.config.example_routes.path_prefix,
+    )
     adapter = CRUDStoreAdapter(graph, graph.example_store)
 
     mappings = {
@@ -47,4 +51,4 @@ def configure_example_routes(graph):
         ),
     }
 
-    configure_crud(graph, Example, mappings, path_prefix)
+    configure_crud(graph, ns, mappings)
