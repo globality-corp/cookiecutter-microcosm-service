@@ -21,7 +21,7 @@ from mock import patch
 
 from {{cookiecutter.project_name}}.app import create_app
 from {{cookiecutter.project_name}}.models.example_model import Example
-from {{cookiecutter.project_name}}.routes.example_routes import ExampleSchema
+from {{cookiecutter.project_name}}.resources.example_resources import ExampleSchema
 
 
 class ExampleMatcher(JSONMatcher):

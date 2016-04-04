@@ -1,0 +1,9 @@
+*
+!{{cookiecutter.project_name}}
+!manage.py
+!MANIFEST.in
+!README.md
+!setup.py
+!setup.cfg
+**/*.pyc
+**/*~
