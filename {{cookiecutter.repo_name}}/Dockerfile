@@ -1,4 +1,4 @@
-FROM 021749107756.dkr.ecr.us-east-1.amazonaws.com/python-service:master
+FROM 308798440167.dkr.ecr.us-east-1.amazonaws.com/python-service:master
 
 ARG GEM_FURY_URL
 
