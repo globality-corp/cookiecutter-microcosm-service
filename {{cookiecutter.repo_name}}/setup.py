@@ -16,6 +16,7 @@ setup(
     zip_safe=False,
     install_requires=[
         "microcosm-flask>=0.4.0",
+        "microcosm-logging>=0.5.0",
         "microcosm-postgres>=0.3.0",
         "newrelic>=2.60.0",
     ],
