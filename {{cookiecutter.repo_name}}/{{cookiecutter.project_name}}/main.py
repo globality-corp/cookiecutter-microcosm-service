@@ -14,7 +14,7 @@ def createall():
     Create (and possibly drop) database tables.
 
     """
-    graph = create_app(debug=True)
+    graph = create_app(debug=True, model_only=True)
     createall_main(graph)
 
 
@@ -23,7 +23,7 @@ def migrate():
     Invoke Alembic migrations.
 
     """
-    graph = create_app(debug=True)
+    graph = create_app(debug=True, model_only=True)
     migrate_main(graph)
 
 

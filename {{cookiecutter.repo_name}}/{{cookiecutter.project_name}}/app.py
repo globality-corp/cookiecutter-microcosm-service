@@ -11,7 +11,7 @@ from {{cookiecutter.project_name}}.routes import example_routes  # noqa
 from {{cookiecutter.project_name}}.stores import example_store  # noqa
 
 
-def create_app(debug=False, testing=False):
+def create_app(debug=False, testing=False, model_only=False):
     """
     Create the object graph for the application.
 
@@ -29,14 +29,18 @@ def create_app(debug=False, testing=False):
     )
 
     graph.use(
-        "discovery_convention",
-        "example_routes",
-        "health_convention",
         "postgres",
-        "postgres_health_check",
         "sessionmaker",
         "session_factory",
-        "swagger_convention",
     )
+
+    if not model_only:
+        graph.use(
+            "discovery_convention",
+            "example_routes",
+            "health_convention",
+            "postgres_health_check",
+            "swagger_convention",
+        )
 
     return graph.lock()
