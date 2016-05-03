@@ -30,6 +30,7 @@ def create_app(debug=False, testing=False, model_only=False):
     )
 
     graph.use(
+        "logging",
         "postgres",
         "sessionmaker",
         "session_factory",
