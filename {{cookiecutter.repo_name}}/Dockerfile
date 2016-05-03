@@ -14,4 +14,4 @@ RUN pip install --extra-index-url $GEM_FURY_URL .
 # Copy source and reinstall
 COPY $NAME /src/$NAME/
 RUN rm -rf /src/$NAME/tests
-RUN pip install -U .
+RUN pip install -U -e .
