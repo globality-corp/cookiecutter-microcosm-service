@@ -33,6 +33,7 @@ class TestExamples(object):
 
     def teardown(self):
         self.context.close()
+        self.graph.postgres.dispose()
 
     def test_create(self):
         """

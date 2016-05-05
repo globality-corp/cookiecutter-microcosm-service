@@ -1,4 +1,4 @@
-FROM 021749107756.dkr.ecr.us-east-1.amazonaws.com/python-service:master
+FROM 308798440167.dkr.ecr.us-east-1.amazonaws.com/python-service:master
 
 ARG GEM_FURY_URL
 
@@ -14,4 +14,4 @@ RUN pip install --extra-index-url $GEM_FURY_URL .
 # Copy source and reinstall
 COPY $NAME /src/$NAME/
 RUN rm -rf /src/$NAME/tests
-RUN pip install -U .
+RUN pip install -U -e .
