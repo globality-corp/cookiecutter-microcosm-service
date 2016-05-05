@@ -58,6 +58,9 @@ class TestExampleRoutes(object):
             name=self.name1,
         )
 
+    def teardown(self):
+        self.graph.postgres.dispose()
+
     def test_search(self):
         with SessionContext(self.graph), transaction():
             self.example1.create()
