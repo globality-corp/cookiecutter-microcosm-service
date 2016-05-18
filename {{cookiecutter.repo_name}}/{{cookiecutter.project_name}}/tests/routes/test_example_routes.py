@@ -71,7 +71,7 @@ class TestExampleRoutes(object):
 
         with self.graph.app.test_request_context():
             assert_that(response.status_code, is_(equal_to(200)))
-            data = loads(response.data)
+            data = loads(response.data.decode("utf-8"))
             assert_that(data["items"], contains(matches_example(self.example1)))
 
     def test_create(self):
@@ -85,7 +85,7 @@ class TestExampleRoutes(object):
 
         with self.graph.app.test_request_context():
             assert_that(response.status_code, is_(equal_to(201)))
-            assert_that(json_for(response.data), matches_example(self.example1))
+            assert_that(json_for(response.data.decode("utf-8")), matches_example(self.example1))
 
     def test_replace_with_new(self):
         uri = "/api/v1/example/{}".format(self.example1.id)
@@ -96,7 +96,7 @@ class TestExampleRoutes(object):
 
         with self.graph.app.test_request_context():
             assert_that(response.status_code, is_(equal_to(200)))
-            assert_that(json_for(response.data), matches_example(self.example1))
+            assert_that(json_for(response.data.decode("utf-8")), matches_example(self.example1))
 
     def test_retrieve(self):
         with SessionContext(self.graph), transaction():
@@ -108,7 +108,7 @@ class TestExampleRoutes(object):
 
         with self.graph.app.test_request_context():
             assert_that(response.status_code, is_(equal_to(200)))
-            assert_that(json_for(response.data), matches_example(self.example1))
+            assert_that(json_for(response.data).decode("utf-8"), matches_example(self.example1))
 
     def test_delete(self):
         with SessionContext(self.graph), transaction():

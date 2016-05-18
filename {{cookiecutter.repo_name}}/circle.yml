@@ -1,7 +1,3 @@
-general:
-  artifacts:
-     - "dist"
-     - "cover"
 machine:
   # this section should be replaced with:
   #   services:
@@ -13,10 +9,17 @@ machine:
       sudo curl -l -o /usr/bin/docker 'http://s3-external-1.amazonaws.com/circle-downloads/docker-1.9.0-circleci'
       sudo chmod 0755 /usr/bin/docker
       sudo service docker start
+
+general:
+  artifacts:
+     - "dist"
+     - "cover"
+
 database:
   pre:
      - createuser {{cookiecutter.project_name}}
      - createdb -O {{cookiecutter.project_name}} {{cookiecutter.project_name}}_test_db
+
 test:
   override:
      - tox

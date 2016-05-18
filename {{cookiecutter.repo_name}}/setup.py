@@ -15,17 +15,16 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        "microcosm-flask>=0.4.0",
+        "microcosm>=0.10.0",
+        "microcosm-flask>=0.16.2",
         "microcosm-logging>=0.5.0",
-        "microcosm-postgres>=0.3.0",
+        "microcosm-postgres>=0.12.0",
         "ndg-httpsclient>=0.4.0",
-        "newrelic>=2.60.0",
-        "uwsgi>=2.0.10",
+        "newrelic>=2.64.0.48",
+        "uwsgi>=2.0.13.1",
     ],
     setup_requires=[
-        "nose>=1.3.6",
-    ],
-    dependency_links=[
+        "nose>=1.3.7",
     ],
     entry_points={
         "console_scripts": [
@@ -36,7 +35,7 @@ setup(
     },
     tests_require=[
         "coverage>=3.7.1",
-        "mock>=1.0.1",
-        "PyHamcrest>=1.8.5",
+        "mock>=2.0.0",
+        "PyHamcrest>=1.9.0",
     ],
 )
