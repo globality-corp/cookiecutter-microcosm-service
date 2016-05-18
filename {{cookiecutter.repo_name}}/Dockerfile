@@ -8,7 +8,7 @@ LABEL service-type="python-service"
 LABEL uses-postgres="true"
 
 # Copy top-level files and install dependencies
-COPY manage.py MANIFEST.in README.md setup.cfg setup.py /src/
+COPY MANIFEST.in README.md setup.cfg setup.py /src/
 RUN pip install --extra-index-url $GEM_FURY_URL .
 
 # Copy source and reinstall
