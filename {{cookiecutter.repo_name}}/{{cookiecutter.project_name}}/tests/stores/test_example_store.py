@@ -15,8 +15,8 @@ from hamcrest import (
 from microcosm_postgres.context import SessionContext, transaction
 from microcosm_postgres.errors import DuplicateModelError
 
-from {{cookiecutter.project_name}}.app import create_app
-from {{cookiecutter.project_name}}.models.example_model import Example
+from {{ cookiecutter.project_name }}.app import create_app
+from {{ cookiecutter.project_name }}.models.example_model import Example
 
 
 class TestExamples(object):

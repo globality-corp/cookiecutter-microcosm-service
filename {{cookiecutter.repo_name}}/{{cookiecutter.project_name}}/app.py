@@ -5,10 +5,11 @@ Create the application.
 from microcosm.api import create_object_graph
 from microcosm.loaders import load_each, load_from_environ, load_from_python_file
 
-from {{cookiecutter.project_name}} import postgres  # noqa
-from {{cookiecutter.project_name}}.config import load_default_config
-from {{cookiecutter.project_name}}.routes import example_routes  # noqa
-from {{cookiecutter.project_name}}.stores import example_store  # noqa
+from {{ cookiecutter.project_name }}.config import load_default_config
+import {{ cookiecutter.project_name }}.postgres  # noqa
+import {{ cookiecutter.project_name }}.routes.example.controller  # noqa
+import {{ cookiecutter.project_name }}.routes.example.crud   # noqa
+import {{ cookiecutter.project_name }}.stores.example_store  # noqa
 
 
 def create_app(debug=False, testing=False, model_only=False):
@@ -30,6 +31,7 @@ def create_app(debug=False, testing=False, model_only=False):
     )
 
     graph.use(
+        "example_store",
         "logging",
         "postgres",
         "sessionmaker",
@@ -39,6 +41,7 @@ def create_app(debug=False, testing=False, model_only=False):
     if not model_only:
         graph.use(
             "discovery_convention",
+            "example_controller",
             "example_routes",
             "health_convention",
             "postgres_health_check",

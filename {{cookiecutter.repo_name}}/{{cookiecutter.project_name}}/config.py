@@ -14,10 +14,18 @@ def load_default_config(metadata):
     """
     config = Configuration(
         flask=dict(
-            port={{cookiecutter.service_port}},
+            port={{ cookiecutter.service_port }},
         ),
-        logging=dict(levels=dict(override=dict(warn=[]))),
-        swagger_convention=dict(version="v1"),
+        logging=dict(
+            levels=dict(
+                override=dict(
+                    warn=[],
+                ),
+            ),
+        ),
+        swagger_convention=dict(
+            version="v1",
+        ),
     )
     if metadata.testing:
         config.logging.levels.override.warn.append("alembic.runtime.migration")
