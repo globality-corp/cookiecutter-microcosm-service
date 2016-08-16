@@ -1,5 +1,5 @@
 """
-Example routes tests.
+Example CRUD routes tests.
 
 Tests are sunny day cases under the assumption that framework conventions
 handle most error conditions.
@@ -13,35 +13,15 @@ from hamcrest import (
     equal_to,
     is_,
 )
-from microcosm_flask.matchers import json_for, JSONMatcher
+from microcosm_flask.matchers import json_for
 from microcosm_postgres.context import SessionContext, transaction
 from microcosm_postgres.operations import recreate_all
 from microcosm_postgres.identifiers import new_object_id
 from mock import patch
 
-from {{cookiecutter.project_name}}.app import create_app
-from {{cookiecutter.project_name}}.models.example_model import Example
-from {{cookiecutter.project_name}}.resources.example_resources import ExampleSchema
-
-
-class ExampleMatcher(JSONMatcher):
-    @property
-    def schema_class(self):
-        return ExampleSchema
-
-    def _matches(self, dct):
-        return all((
-            str(self.resource.id) == dct["id"],
-            self.resource.name == dct["name"],
-        ))
-
-
-def matches_example(example):
-    """
-    Syntactic sugar for matching.
-
-    """
-    return ExampleMatcher(example)
+from {{ cookiecutter.project_name }}.app import create_app
+from {{ cookiecutter.project_name }}.models.example_model import Example
+from {{ cookiecutter.project_name }}.tests.routes.matchers import matches_example
 
 
 class TestExampleRoutes(object):
@@ -108,7 +88,7 @@ class TestExampleRoutes(object):
 
         with self.graph.app.test_request_context():
             assert_that(response.status_code, is_(equal_to(200)))
-            assert_that(json_for(response.data).decode("utf-8"), matches_example(self.example1))
+            assert_that(json_for(response.data.decode("utf-8")), matches_example(self.example1))
 
     def test_delete(self):
         with SessionContext(self.graph), transaction():

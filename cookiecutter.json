@@ -1,6 +1,7 @@
 {
     "author": "Globality Engineering",
     "author_email": "engineering@globality.com",
+    "enable_newrelic": false,
     "organization_name": "globality-corp",
     "repo_name": "repo_name",
     "project_name": "project_name",
