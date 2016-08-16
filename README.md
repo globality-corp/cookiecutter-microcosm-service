@@ -17,4 +17,8 @@ Project template for a `microcosm`-based service using Flask and SQLAlchemy with
  4. Answer the questions. Be sure to provide an appropriate value for the `project_name`,
     `repo_name`, and `short_description`.
 
- 5. Change into the `{{ repo_name }}` directory and initialize a new git project from there.
+ 5. Change into the `{{ repo_name }}` directory and initialize a new git project from there:
+
+        git init
+        git add .
+        git commit -m "Initial commit"
