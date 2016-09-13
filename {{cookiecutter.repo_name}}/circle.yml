@@ -10,6 +10,11 @@ machine:
       sudo chmod 0755 /usr/bin/docker
       sudo service docker start
 
+dependencies:
+  override:
+    - pip install tox tox-pyenv wheel
+    - pyenv local 2.7.9 3.5.0  # Should correspond to pre-installed Python versions on CircleCI
+
 general:
   artifacts:
      - "dist"
