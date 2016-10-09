@@ -7,7 +7,7 @@ machine:
 dependencies:
   override:
     - pip install tox tox-pyenv wheel
-    - pyenv local 2.7.9 3.5.0  # Should correspond to pre-installed Python versions on CircleCI
+    - pyenv local 2.7.11 3.5.2  # Should correspond to pre-installed Python versions on CircleCI
 
 general:
   artifacts:
