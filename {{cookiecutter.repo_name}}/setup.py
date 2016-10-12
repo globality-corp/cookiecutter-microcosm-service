@@ -19,8 +19,7 @@ setup(
         "microcosm-flask>=0.16.2",
         "microcosm-logging>=0.5.0",
         "microcosm-postgres>=0.12.0",
-        "ndg-httpsclient>=0.4.0",{% if cookiecutter.enable_newrelic == True %}
-        "newrelic>=2.64.0.48",{% endif %}
+        "ndg-httpsclient>=0.4.0",
         "uwsgi>=2.0.13.1",
     ],
     setup_requires=[
