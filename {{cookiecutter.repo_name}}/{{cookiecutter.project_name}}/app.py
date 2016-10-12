@@ -44,6 +44,7 @@ def create_app(debug=False, testing=False, model_only=False):
             "example_controller",
             "example_routes",
             "health_convention",
+            "port_forwarding",
             "postgres_health_check",
             "swagger_convention",
         )
