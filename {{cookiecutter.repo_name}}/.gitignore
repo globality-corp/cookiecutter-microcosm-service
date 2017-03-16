@@ -92,9 +92,10 @@ docs/_build/
 
 # PyBuilder
 target/
-Dockerfile
-{{ cookiecutter.project_name }}.build/docker-base/*
-!{{ cookiecutter.project_name }}.build/docker-base/build.sh
-!{{ cookiecutter.project_name }}.build/docker-base/Dockerfile.template
-!{{ cookiecutter.project_name }}.build/docker-base/Dockerfile.deps
 
+# Docker build
+Dockerfile
+build.{{ cookiecutter.project_name }}/docker-base/*
+!build.{{ cookiecutter.project_name }}/docker-base/build.sh
+!build.{{ cookiecutter.project_name }}/docker-base/Dockerfile.template
+!build.{{ cookiecutter.project_name }}/docker-base/Dockerfile.deps
