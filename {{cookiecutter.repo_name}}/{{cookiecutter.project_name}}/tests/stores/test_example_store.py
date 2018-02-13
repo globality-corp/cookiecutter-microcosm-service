@@ -19,7 +19,7 @@ from {{ cookiecutter.project_name }}.app import create_app
 from {{ cookiecutter.project_name }}.models.example_model import Example
 
 
-class TestExamples(object):
+class TestExamples:
 
     def setup(self):
         self.graph = create_app(testing=True)

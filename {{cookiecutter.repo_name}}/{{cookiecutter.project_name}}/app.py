@@ -3,7 +3,7 @@ Create the application.
 
 """
 from microcosm.api import create_object_graph
-from microcosm.loaders import load_each, load_from_environ, load_from_python_file
+from microcosm.loaders import load_each, load_from_environ
 
 from {{ cookiecutter.project_name }}.config import load_default_config
 import {{ cookiecutter.project_name }}.postgres  # noqa
@@ -19,7 +19,6 @@ def create_app(debug=False, testing=False, model_only=False):
     """
     loader = load_each(
         load_default_config,
-        load_from_python_file,
         load_from_environ,
     )
 
@@ -40,11 +39,14 @@ def create_app(debug=False, testing=False, model_only=False):
 
     if not model_only:
         graph.use(
+            # conventions
+            "build_info_convention",
             "discovery_convention",
-            "example_controller",
-            "example_routes",
             "health_convention",
+            "port_forwarding",
             "postgres_health_check",
+            # routes
+            "example_routes",
             "swagger_convention",
         )
 
