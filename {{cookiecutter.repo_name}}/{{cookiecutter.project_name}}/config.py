@@ -2,7 +2,6 @@
 Configure the application.
 
 """
-from microcosm.configuration import Configuration
 
 
 def load_default_config(metadata):
@@ -12,14 +11,21 @@ def load_default_config(metadata):
     There should be very little here.
 
     """
-    config = Configuration(
+    if metadata.testing:
+        warn = [
+            "alembic.runtime.migration",
+        ]
+    else:
+        warn = []
+
+    config = dict(
         flask=dict(
             port={{ cookiecutter.service_port }},
         ),
         logging=dict(
             levels=dict(
                 override=dict(
-                    warn=[],
+                    warn=warn,
                 ),
             ),
         ),
@@ -27,6 +33,4 @@ def load_default_config(metadata):
             version="v1",
         ),
     )
-    if metadata.testing:
-        config.logging.levels.override.warn.append("alembic.runtime.migration")
     return config
