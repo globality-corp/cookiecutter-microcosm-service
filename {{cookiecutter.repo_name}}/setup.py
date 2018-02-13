@@ -15,12 +15,12 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        "microcosm>=0.10.0",
-        "microcosm-flask>=0.16.2",
-        "microcosm-logging>=0.5.0",
-        "microcosm-postgres>=0.12.0",
-        "ndg-httpsclient>=0.4.0",
-        "uwsgi>=2.0.13.1",
+        "microcosm>=2.1.0",
+        "microcosm-dynamodb>=1.0.0",
+        "microcosm-flask[metrics,spooky]>=1.4.0",
+        "microcosm-logging>=1.0.0",
+        "microcosm-postgres>=1.1.0",
+        "pyOpenSSL>=17.5.0",
     ],
     setup_requires=[
         "nose>=1.3.7",
