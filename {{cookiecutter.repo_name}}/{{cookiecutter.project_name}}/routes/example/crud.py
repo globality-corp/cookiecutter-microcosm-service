@@ -10,8 +10,8 @@ from microcosm_postgres.context import transactional
 
 from {{ cookiecutter.project_name }}.resources.example_resources import (
     ExampleSchema,
-    ExampleFilterSchema,
     NewExampleSchema,
+    SearchExampleSchema,
 )
 
 
@@ -38,7 +38,7 @@ def configure_example_routes(graph):
         ),
         Operation.Search: EndpointDefinition(
             func=controller.search,
-            request_schema=ExampleFilterSchema(),
+            request_schema=SearchExampleSchema(),
             response_schema=ExampleSchema(),
         ),
     }

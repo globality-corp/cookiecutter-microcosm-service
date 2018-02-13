@@ -40,5 +40,5 @@ class ExampleSchema(NewExampleSchema):
         return links.to_dict()
 
 
-class ExampleFilterSchema(PageSchema):
+class SearchExampleSchema(PageSchema):
     name = fields.String()

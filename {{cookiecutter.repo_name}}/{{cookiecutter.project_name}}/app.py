@@ -39,12 +39,14 @@ def create_app(debug=False, testing=False, model_only=False):
 
     if not model_only:
         graph.use(
+            # conventions
+            "build_info_convention",
             "discovery_convention",
-            "example_controller",
-            "example_routes",
             "health_convention",
             "port_forwarding",
             "postgres_health_check",
+            # routes
+            "example_routes",
             "swagger_convention",
         )
 
