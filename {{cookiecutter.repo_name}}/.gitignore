@@ -101,4 +101,4 @@ build.{{ cookiecutter.project_name }}/docker-base/*
 !build.{{ cookiecutter.project_name }}/docker-base/Dockerfile.deps
 
 # microcosm config
-juvenal.conf
+{{ cookiecutter.project_name }}.conf
