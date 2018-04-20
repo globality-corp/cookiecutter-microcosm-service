@@ -21,6 +21,7 @@ setup(
         "microcosm-logging>=1.0.0",
         "microcosm-postgres>=1.1.0",
         "pyOpenSSL>=17.5.0",
+        # until botocore stops enforcing: python-dateutil>=2.1,<2.7.0
         "python-dateutil==2.6.1",
     ],
     setup_requires=[
