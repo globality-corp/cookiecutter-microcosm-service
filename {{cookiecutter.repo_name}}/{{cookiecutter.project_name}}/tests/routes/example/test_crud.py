@@ -49,7 +49,7 @@ class TestExampleRoutes:
         response = self.client.get(uri)
 
         assert_that(response.status_code, is_(equal_to(200)))
-        data = loads(response.data.decode("utf-8"))
+        data = loads(response.data)
         assert_that(data, has_entries(
             items=contains(
                 has_entries(
@@ -69,21 +69,21 @@ class TestExampleRoutes:
             }))
 
         assert_that(response.status_code, is_(equal_to(201)))
-        data = loads(response.data.decode("utf-8"))
+        data = loads(response.data)
         assert_that(data, has_entries(
             id=str(self.example1.id),
             name=self.example1.name,
         ))
 
     def test_replace_with_new(self):
-        uri = "/api/v1/example/{}".format(self.example1.id)
+        uri = f"/api/v1/example/{self.example1.id}"
 
         response = self.client.put(uri, data=dumps({
             "name": self.example1.name,
         }))
 
         assert_that(response.status_code, is_(equal_to(200)))
-        data = loads(response.data.decode("utf-8"))
+        data = loads(response.data)
         assert_that(data, has_entries(
             id=str(self.example1.id),
             name=self.example1.name,
@@ -93,11 +93,11 @@ class TestExampleRoutes:
         with SessionContext(self.graph), transaction():
             self.example1.create()
 
-        uri = "/api/v1/example/{}".format(self.example1.id)
+        uri = f"/api/v1/example/{self.example1.id}"
 
         response = self.client.get(uri)
 
-        data = loads(response.data.decode("utf-8"))
+        data = loads(response.data)
         assert_that(data, has_entries(
             id=str(self.example1.id),
             name=self.example1.name,
@@ -107,7 +107,7 @@ class TestExampleRoutes:
         with SessionContext(self.graph), transaction():
             self.example1.create()
 
-        uri = "/api/v1/example/{}".format(self.example1.id)
+        uri = f"/api/v1/example/{self.example1.id}"
 
         response = self.client.delete(uri)
         assert_that(response.status_code, is_(equal_to(204)))
