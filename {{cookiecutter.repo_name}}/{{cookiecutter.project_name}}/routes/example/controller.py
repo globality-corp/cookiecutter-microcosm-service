@@ -13,7 +13,7 @@ from {{ cookiecutter.project_name }}.models.example_model import Example
 class ExampleController(CRUDStoreAdapter):
 
     def __init__(self, graph):
-        super(ExampleController, self).__init__(graph, graph.example_store)
+        super().__init__(graph, graph.example_store)
 
         self.ns = Namespace(
             subject=Example,

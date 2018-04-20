@@ -12,7 +12,7 @@ from {{ cookiecutter.project_name }}.models.example_model import Example
 class ExampleStore(Store):
 
     def __init__(self, graph):
-        super(ExampleStore, self).__init__(self, Example)
+        super().__init__(self, Example)
 
     def retrieve_by_name(self, name):
         return self._retrieve(Example.name == name)
@@ -22,7 +22,7 @@ class ExampleStore(Store):
             query = query.filter(
                 Example.name == name,
             )
-        return super(ExampleStore, self)._filter(query, **kwargs)
+        return super()._filter(query, **kwargs)
 
     def _order_by(self, query, **kwargs):
         return query.order_by(
