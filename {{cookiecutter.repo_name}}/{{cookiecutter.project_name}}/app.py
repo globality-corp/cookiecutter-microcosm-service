@@ -3,7 +3,9 @@ Create the application.
 
 """
 from microcosm.api import create_object_graph
-from microcosm.loaders import load_each, load_from_environ
+from microcosm.loaders.compose import load_config_and_secrets
+from microcosm.loaders import load_each, load_from_environ, load_from_json_file
+from microcosm_dynamodb.loaders.conventions import load_from_dynamodb
 
 from {{ cookiecutter.project_name }}.config import load_default_config
 import {{ cookiecutter.project_name }}.postgres  # noqa
@@ -17,16 +19,21 @@ def create_app(debug=False, testing=False, model_only=False):
     Create the object graph for the application.
 
     """
-    loader = load_each(
+    config_loader = load_each(
         load_default_config,
         load_from_environ,
+        load_from_json_file,
+    )
+    partitioned_loader = load_config_and_secrets(
+        config=config_loader,
+        secrets=load_from_dynamodb(),
     )
 
     graph = create_object_graph(
         name=__name__.split(".")[0],
         debug=debug,
         testing=testing,
-        loader=loader,
+        loader=partitioned_loader,
     )
 
     graph.use(
@@ -41,13 +48,14 @@ def create_app(debug=False, testing=False, model_only=False):
         graph.use(
             # conventions
             "build_info_convention",
+            "config_convention",
             "discovery_convention",
             "health_convention",
             "port_forwarding",
             "postgres_health_check",
+            "swagger_convention",
             # routes
             "example_routes",
-            "swagger_convention",
         )
 
     return graph.lock()

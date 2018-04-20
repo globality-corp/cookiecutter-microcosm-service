@@ -15,12 +15,14 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        "microcosm>=2.1.0",
-        "microcosm-dynamodb>=1.0.0",
-        "microcosm-flask[metrics,spooky]>=1.4.0",
+        "microcosm>=2.4.0",
+        "microcosm-dynamodb>=1.1.0",
+        "microcosm-flask[metrics,spooky]>=1.5.1",
         "microcosm-logging>=1.0.0",
         "microcosm-postgres>=1.1.0",
         "pyOpenSSL>=17.5.0",
+        # until botocore stops enforcing: python-dateutil>=2.1,<2.7.0
+        "python-dateutil==2.6.1",
     ],
     setup_requires=[
         "nose>=1.3.7",
@@ -33,7 +35,7 @@ setup(
         ],
     },
     tests_require=[
-        "coverage>=3.7.1",
+        "coverage>=4.0.3",
         "mock>=2.0.0",
         "PyHamcrest>=1.9.0",
     ],
