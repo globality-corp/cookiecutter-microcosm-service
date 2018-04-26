@@ -6,7 +6,7 @@ from microcosm.api import binding
 
 from microcosm_flask.session import register_session_factory
 from microcosm_postgres.context import SessionContext
-from microcosm_postgres.health import check_health
+from microcosm_postgres.health import check_alembic
 
 
 @binding("session_factory")
@@ -26,4 +26,4 @@ def configure_postgres_health_check(graph):
     Register the SQLAlchemy health check with the Flask health convention.
 
     """
-    graph.health_convention.checks["database"] = check_health
+    graph.health_convention.checks["database"] = check_alembic
