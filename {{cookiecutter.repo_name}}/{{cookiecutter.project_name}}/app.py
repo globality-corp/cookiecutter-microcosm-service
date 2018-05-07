@@ -5,7 +5,7 @@ Create the application.
 from microcosm.api import create_object_graph
 from microcosm.loaders.compose import load_config_and_secrets
 from microcosm.loaders import load_each, load_from_environ, load_from_json_file
-from microcosm_dynamodb.loaders.conventions import load_from_dynamodb
+from microcosm_secretsmanager.loaders.conventions import load_from_secretsmanager
 
 from {{ cookiecutter.project_name }}.config import load_default_config
 import {{ cookiecutter.project_name }}.postgres  # noqa
@@ -26,7 +26,7 @@ def create_app(debug=False, testing=False, model_only=False):
     )
     partitioned_loader = load_config_and_secrets(
         config=config_loader,
-        secrets=load_from_dynamodb(),
+        secrets=load_from_secretsmanager(),
     )
 
     graph = create_object_graph(
