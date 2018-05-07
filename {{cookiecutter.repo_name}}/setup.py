@@ -16,7 +16,7 @@ setup(
     zip_safe=False,
     install_requires=[
         "microcosm>=2.4.0",
-        "microcosm-dynamodb>=1.1.0",
+        "microcosm-secretsmanager>=1.1.0",
         "microcosm-flask[metrics,spooky]>=1.5.1",
         "microcosm-logging>=1.0.0",
         "microcosm-postgres>=1.1.0",
