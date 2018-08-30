@@ -51,6 +51,7 @@ def create_app(debug=False, testing=False, model_only=False):
             "config_convention",
             "discovery_convention",
             "health_convention",
+            "landing_convention",
             "port_forwarding",
             "postgres_health_check",
             "swagger_convention",
