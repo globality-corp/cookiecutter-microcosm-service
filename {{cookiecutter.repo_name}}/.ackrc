@@ -6,3 +6,4 @@
 --ignore-dir=.tox/
 --ignore-dir=build/
 --ignore-dir=cover/
+--ignore-dir=.mypy_cache/

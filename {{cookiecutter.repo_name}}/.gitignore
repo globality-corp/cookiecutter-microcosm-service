@@ -102,3 +102,6 @@ build.{{ cookiecutter.project_name }}/docker-base/*
 
 # microcosm config
 {{ cookiecutter.project_name }}.conf
+
+[mypy]
+ignore_missing_imports = True

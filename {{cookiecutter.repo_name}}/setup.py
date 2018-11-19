@@ -21,8 +21,7 @@ setup(
         "microcosm-logging>=1.0.0",
         "microcosm-postgres>=1.1.0",
         "pyOpenSSL>=17.5.0",
-        # until botocore stops enforcing: python-dateutil>=2.1,<2.7.0
-        "python-dateutil==2.6.1",
+        "python-dateutil>=2.7.3",
     ],
     setup_requires=[
         "nose>=1.3.7",
@@ -37,7 +36,6 @@ setup(
     extras_require = {
         "test": [
             "coverage>=4.0.3",
-            "mock>=2.0.0",
             "PyHamcrest>=1.9.0",
         ],
     },
