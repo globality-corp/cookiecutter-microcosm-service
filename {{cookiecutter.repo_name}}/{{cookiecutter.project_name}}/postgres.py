@@ -6,7 +6,7 @@ from microcosm.api import binding
 
 from microcosm_flask.session import register_session_factory
 from microcosm_postgres.context import SessionContext
-from microcosm_postgres.health import check_alembic
+from microcosm_postgres.health import check_alembic, get_current_head_version
 
 
 @binding("session_factory")
@@ -27,3 +27,4 @@ def configure_postgres_health_check(graph):
 
     """
     graph.health_convention.checks["database"] = check_alembic
+    graph.health_convention.checks["database_migration_head"] = get_current_head_version
