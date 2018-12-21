@@ -34,9 +34,11 @@ setup(
             "runserver = {{ cookiecutter.project_name }}.main:runserver",
         ],
     },
-    tests_require=[
-        "coverage>=4.0.3",
-        "mock>=2.0.0",
-        "PyHamcrest>=1.9.0",
-    ],
+    extras_require = {
+        "test": [
+            "coverage>=4.0.3",
+            "mock>=2.0.0",
+            "PyHamcrest>=1.9.0",
+        ],
+    },
 )
