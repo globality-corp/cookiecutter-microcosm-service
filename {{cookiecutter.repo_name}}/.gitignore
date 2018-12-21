@@ -102,3 +102,5 @@ build.{{ cookiecutter.project_name }}/docker-base/*
 
 # microcosm config
 {{ cookiecutter.project_name }}.conf
+
+.mypy_cache
