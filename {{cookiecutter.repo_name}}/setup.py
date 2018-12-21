@@ -32,7 +32,7 @@ setup(
             "runserver = {{ cookiecutter.project_name }}.main:runserver",
         ],
     },
-    extras_require = {
+    extras_require={
         "test": [
             "coverage>=4.0.3",
             "PyHamcrest>=1.9.0",
