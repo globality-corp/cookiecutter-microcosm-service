@@ -15,14 +15,12 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        "microcosm>=2.4.0",
+        "microcosm>=2.4.1",
+        "microcosm-flask[metrics,spooky]>=1.20.0",
+        "microcosm-logging>=1.3.0",
+        "microcosm-postgres>=1.9.1",
         "microcosm-secretsmanager>=1.1.0",
-        "microcosm-flask[metrics,spooky]>=1.5.1",
-        "microcosm-logging>=1.0.0",
-        "microcosm-postgres>=1.1.0",
-        "pyOpenSSL>=17.5.0",
-        # until botocore stops enforcing: python-dateutil>=2.1,<2.7.0
-        "python-dateutil==2.6.1",
+        "pyOpenSSL>=18.0.0",
     ],
     setup_requires=[
         "nose>=1.3.7",
@@ -34,10 +32,9 @@ setup(
             "runserver = {{ cookiecutter.project_name }}.main:runserver",
         ],
     },
-    extras_require = {
+    extras_require={
         "test": [
             "coverage>=4.0.3",
-            "mock>=2.0.0",
             "PyHamcrest>=1.9.0",
         ],
     },
