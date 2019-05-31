@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from setuptools import find_packages, setup
 
+
 project = "{{ cookiecutter.project_name }}"
 version = "{{ cookiecutter.project_version }}"
 
