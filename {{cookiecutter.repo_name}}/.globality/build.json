@@ -1,0 +1,10 @@
+{
+  "type": "python-service",
+  "version": "{{ cookiecutter.project_version }}",
+  "params": {
+    "name": "{{ cookiecutter.project_name }}",
+    "databases": [
+      "{{ cookiecutter.database }}"
+    ]
+  }
+}

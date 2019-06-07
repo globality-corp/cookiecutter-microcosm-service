@@ -6,5 +6,6 @@
     "project_name": "project_name",
     "project_version": "0.1.0",
     "short_description": "Short Project Description",
-    "service_port": 5000
+    "service_port": 5000,
+    "database": ["posgres", "elasticsearch", "memcached", "neo4j"]
 }
