@@ -2,9 +2,8 @@
 An example model.
 
 """
-from sqlalchemy import Column, String
-
 from microcosm_postgres.models import EntityMixin, Model
+from sqlalchemy import Column, String
 
 
 class Example(EntityMixin, Model):

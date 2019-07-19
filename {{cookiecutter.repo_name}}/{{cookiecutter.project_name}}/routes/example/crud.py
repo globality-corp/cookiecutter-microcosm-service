@@ -8,11 +8,7 @@ from microcosm_flask.conventions.crud import configure_crud
 from microcosm_flask.operations import Operation
 from microcosm_postgres.context import transactional
 
-from {{ cookiecutter.project_name }}.resources.example_resources import (
-    ExampleSchema,
-    NewExampleSchema,
-    SearchExampleSchema,
-)
+from {{ cookiecutter.project_name }}.resources.example_resources import ExampleSchema, NewExampleSchema, SearchExampleSchema
 
 
 @binding("example_routes")
