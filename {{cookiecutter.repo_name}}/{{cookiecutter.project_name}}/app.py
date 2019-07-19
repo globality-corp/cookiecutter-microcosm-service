@@ -3,15 +3,15 @@ Create the application.
 
 """
 from microcosm.api import create_object_graph
-from microcosm.loaders.compose import load_config_and_secrets
 from microcosm.loaders import load_each, load_from_environ, load_from_json_file
+from microcosm.loaders.compose import load_config_and_secrets
 from microcosm_secretsmanager.loaders.conventions import load_from_secretsmanager
 
-from {{ cookiecutter.project_name }}.config import load_default_config
 import {{ cookiecutter.project_name }}.postgres  # noqa
 import {{ cookiecutter.project_name }}.routes.example.controller  # noqa
 import {{ cookiecutter.project_name }}.routes.example.crud   # noqa
 import {{ cookiecutter.project_name }}.stores.example_store  # noqa
+from {{ cookiecutter.project_name }}.config import load_default_config
 
 
 def create_app(debug=False, testing=False, model_only=False):

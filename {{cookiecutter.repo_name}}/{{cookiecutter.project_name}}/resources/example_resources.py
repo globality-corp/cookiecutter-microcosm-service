@@ -2,9 +2,8 @@
 Example resources.
 
 """
-from marshmallow import fields, Schema
-
-from microcosm_flask.linking import Links, Link
+from marshmallow import Schema, fields
+from microcosm_flask.linking import Link, Links
 from microcosm_flask.namespaces import Namespace
 from microcosm_flask.operations import Operation
 from microcosm_flask.paging import PageSchema

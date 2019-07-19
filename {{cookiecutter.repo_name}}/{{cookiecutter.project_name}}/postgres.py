@@ -3,7 +3,6 @@ Integrate the web (Flask) and database (SQLAlchemy/Postgres) layers.
 
 """
 from microcosm.api import binding
-
 from microcosm_flask.session import register_session_factory
 from microcosm_postgres.context import SessionContext
 from microcosm_postgres.health import check_alembic, get_current_head_version

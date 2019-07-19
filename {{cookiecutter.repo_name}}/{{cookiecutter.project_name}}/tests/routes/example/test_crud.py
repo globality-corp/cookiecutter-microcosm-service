@@ -15,8 +15,8 @@ from hamcrest import (
     is_,
 )
 from microcosm_postgres.context import SessionContext, transaction
-from microcosm_postgres.operations import recreate_all
 from microcosm_postgres.identifiers import new_object_id
+from microcosm_postgres.operations import recreate_all
 
 from {{ cookiecutter.project_name }}.app import create_app
 from {{ cookiecutter.project_name }}.models.example_model import Example
