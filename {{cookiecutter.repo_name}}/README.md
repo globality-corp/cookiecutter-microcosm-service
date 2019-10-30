@@ -40,7 +40,7 @@ The service publishes several endpoints by default.
  -  The service publishes a [crawlable](https://en.wikipedia.org/wiki/HATEOAS) endpoint for discovery
     of its operations:
 
-        GET /api/
+        GET /api
 
  -  The service publishes [Swagger](http://swagger.io/) definitions for its operations (by API version)
     using [HAL JSON](http://stateless.co/hal_specification.html):
