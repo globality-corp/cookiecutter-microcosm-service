@@ -19,7 +19,7 @@ setup(
         "microcosm>=2.12.0",
         "microcosm-flask[metrics,spooky]>=1.20.0",
         "microcosm-logging>=1.3.0",
-        "microcosm-postgres>=1.9.1",
+        "microcosm-postgres>=1.19.0",
         "microcosm-secretsmanager>=1.1.0",
         "pyOpenSSL>=18.0.0",
     ],

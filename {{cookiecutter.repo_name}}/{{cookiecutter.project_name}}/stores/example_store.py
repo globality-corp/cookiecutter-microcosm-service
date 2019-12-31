@@ -12,7 +12,7 @@ from {{ cookiecutter.project_name }}.models.example_model import Example
 class ExampleStore(Store):
 
     def __init__(self, graph):
-        super().__init__(self, Example)
+        super().__init__(graph, Example)
 
     def retrieve_by_name(self, name):
         return self._retrieve(Example.name == name)
