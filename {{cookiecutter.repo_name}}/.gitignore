@@ -93,13 +93,6 @@ docs/_build/
 # PyBuilder
 target/
 
-# Docker build
-Dockerfile
-build.{{ cookiecutter.project_name }}/docker-base/*
-!build.{{ cookiecutter.project_name }}/docker-base/build.sh
-!build.{{ cookiecutter.project_name }}/docker-base/Dockerfile.template
-!build.{{ cookiecutter.project_name }}/docker-base/Dockerfile.deps
-
 # microcosm config
 {{ cookiecutter.project_name }}.conf
 
