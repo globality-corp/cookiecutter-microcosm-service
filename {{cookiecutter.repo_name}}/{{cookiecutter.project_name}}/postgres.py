@@ -27,4 +27,4 @@ def configure_postgres_health_check(graph):
 
     """
     graph.health_convention.checks["database"] = check_alembic
-    graph.health_convention.checks["database_migration_head"] = get_current_head_version
+    graph.health_convention.optional_checks["database_migration_head"] = get_current_head_version
