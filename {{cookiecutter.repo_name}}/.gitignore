@@ -104,3 +104,6 @@ build.{{ cookiecutter.project_name }}/docker-base/*
 {{ cookiecutter.project_name }}.conf
 
 .mypy_cache
+
+# IDEs
+.idea/
