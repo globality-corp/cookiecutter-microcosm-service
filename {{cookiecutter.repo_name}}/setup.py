@@ -23,9 +23,6 @@ setup(
         "microcosm-secretsmanager>=1.1.0",
         "pyOpenSSL>=18.0.0",
     ],
-    setup_requires=[
-        "nose>=1.3.7",
-    ],
     entry_points={
         "console_scripts": [
             "createall = {{ cookiecutter.project_name }}.main:createall",
@@ -36,7 +33,6 @@ setup(
     extras_require={
         "test": [
             "coverage>=4.0.3",
-            "PyHamcrest>=1.9.0",
         ],
     },
 )
